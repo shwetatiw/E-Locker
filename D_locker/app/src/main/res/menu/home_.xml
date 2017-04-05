@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_doc"
+        android:title="Search" />
+    <item
+        android:id="@+id/action_camera"
+        android:title="Scan" />
+    <item
+        android:id="@+id/action_add_file"
+        android:title="Add New" />
+    <item
+        android:id="@+id/action_setting"
+        android:title="Setting" />
+    <item
+        android:id="@+id/action_about"
+        android:title="About" />
+</menu>
