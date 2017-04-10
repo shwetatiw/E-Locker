@@ -69,6 +69,8 @@ public class Home_Activity extends AppCompatActivity
             case R.id.action_add_file:
                 break;
             case R.id.action_setting:
+                Intent setting=new Intent(Home_Activity.this,SettingsActivity.class);
+                startActivity(setting);
                 break;
             case R.id.action_about:
                 break;
