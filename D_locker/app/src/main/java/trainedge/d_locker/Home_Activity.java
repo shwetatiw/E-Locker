@@ -1,7 +1,9 @@
 package trainedge.d_locker;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -14,8 +16,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.facebook.AccessToken;
+import com.facebook.login.LoginManager;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class Home_Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +32,19 @@ public class Home_Activity extends AppCompatActivity
         setContentView(R.layout.activity_home_);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        mAuth = FirebaseAuth.getInstance();
+        mAuthListener =new FirebaseAuth.AuthStateListener(){
 
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user=firebaseAuth.getCurrentUser();
+                if(user==null){
+                    Intent logint =new Intent(Home_Activity.this,LoginActivity.class);
+                    startActivity(logint);
+                    finish();
+                }
+            }
+        };
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -74,6 +95,9 @@ public class Home_Activity extends AppCompatActivity
                 break;
             case R.id.action_about:
                 break;
+            case R.id.action_exit:
+                finish();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
@@ -100,6 +124,14 @@ public class Home_Activity extends AppCompatActivity
                 startActivity(feedback);
                 break;
             case R.id.nav_logout:
+                mAuth.signOut();
+                try {
+                    LoginManager.getInstance().logOut();
+                    AccessToken.setCurrentAccessToken(null);
+                } catch (Exception ignored){
+                }
+                Intent lgtIntent=new Intent(Home_Activity.this,LoginActivity.class);
+                startActivity(lgtIntent);
                 finish();
         }
 

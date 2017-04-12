@@ -6,13 +6,18 @@
         android:title="Search" />
     <item
         android:id="@+id/action_camera"
-        android:title="Scan" />
+        android:title="Camera" />
     <item
         android:id="@+id/action_add_file"
         android:title="Add New" />
     <item
         android:id="@+id/action_setting"
         android:title="Setting" />
+    <item
+        android:id="@+id/action_exit"
+        android:icon="@drawable/ic_exit_to_app_black_24dp"
+        android:title="Exit"
+        app:showAsAction="always" />
     <item
         android:id="@+id/action_about"
         android:title="About" />
