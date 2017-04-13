@@ -116,8 +116,11 @@ public class Home_Activity extends AppCompatActivity
             case R.id.nav_download:
                 break;
             case R.id.nav_share:
-                break;
-            case R.id.nav_invite:
+            Intent share = new Intent(Intent.ACTION_SEND);
+            share.setType("text/plain");
+            share.putExtra(Intent.EXTRA_SUBJECT,"D_locker");
+            share.putExtra(Intent.EXTRA_TEXT,"\"Your friend has invited you to join the app./n To join click the link\"");
+            startActivity(Intent.createChooser(share,"share via..."));
                 break;
             case R.id.nav_feedback:
                 Intent feedback=new Intent(Home_Activity.this,FeedbackActivity.class);
