@@ -19,13 +19,18 @@
         android:icon="@android:drawable/ic_lock_power_off"
         android:title="Logout" />
  </group>
-    <item android:title="Communicate">
+    <item android:title="Communicate"
+        android:layout_height="wrap_content">
        <menu>
           <item
 
               android:id="@+id/nav_share"
               android:icon="@drawable/ic_share_black_24dp"
               android:title="Share" />
+          <item
+              android:id="@+id/nav_invite"
+              android:icon="@drawable/ic_insert_invitation_black_24dp"
+              android:title="Invite" />
           <item
         android:id="@+id/nav_feedback"
         android:icon="@drawable/ic_feedback_black_24dp"
