@@ -111,6 +111,8 @@ public class Home_Activity extends AppCompatActivity
                 startActivity(setting);
                 break;
             case R.id.action_about:
+                Intent about = new Intent(Home_Activity.this, AboutActivity.class);
+                startActivity(about);
                 break;
             case R.id.action_exit:
                 finish();
