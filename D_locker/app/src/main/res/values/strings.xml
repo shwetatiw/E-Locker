@@ -85,12 +85,16 @@
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_splash">SplashActivity</string>
-    <string name="invitation_title">Download Please</string>
+    <string name="invitation_title">Please Download </string>
     <string name="invitation_message">Please Install app</string>
     <string name="invitation_cta">call action text</string>
-    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_about">About Us </string>
     <string name="large_text">
-        "Hello D-LOcker"
+        "D-Locker OR, digital locker, a digital space where you can keep all your documents safe in virtual form.
+        Every person can be stored on the locker all their important documents like PAN card,voter ID card,
+        other government issued ID card, passport, birth and marriage certificate,Receipt, Bill, Mark sheet etc.,
+        We use OCR technology in this App.
+        We can set Reminder on captured photos."
     </string>
 
 </resources>

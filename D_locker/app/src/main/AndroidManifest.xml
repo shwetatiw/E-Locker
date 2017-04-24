@@ -45,10 +45,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
         <activity
-            android:name=".AboutActivity"
-            android:label="@string/title_activity_about"
+            android:name=".FeedbackActivity"
+            android:label="@string/title_activity_feedback"
             android:parentActivityName=".Home_Activity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
@@ -56,8 +55,8 @@
                 android:value="trainedge.d_locker.Home_Activity" />
         </activity>
         <activity
-            android:name=".FeedbackActivity"
-            android:label="@string/title_activity_feedback"
+            android:name=".AboutActivity"
+            android:label="@string/title_activity_about"
             android:parentActivityName=".Home_Activity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

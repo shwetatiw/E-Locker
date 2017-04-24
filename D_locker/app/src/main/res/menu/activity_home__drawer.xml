@@ -1,42 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
- <group android:checkableBehavior="single">
-    <item
-        android:id="@+id/nav_file"
-        android:icon="@drawable/ic_folder_black_24dp"
-        android:title="D-Locker" />
-    <item
-        android:id="@+id/nav_upload"
-        android:icon="@android:drawable/ic_menu_upload"
-        android:title="Upload" />
-    <item
-        android:id="@+id/nav_download"
-        android:icon="@android:drawable/stat_sys_download_done"
-        android:title="Download" />
-    <item
-        android:id="@+id/nav_logout"
-        android:icon="@android:drawable/ic_lock_power_off"
-        android:title="Logout" />
- </group>
-    <item android:title="Communicate"
-        android:layout_height="wrap_content">
-       <menu>
-          <item
+   <group android:checkableBehavior="single">
+      <item
+          android:id="@+id/nav_file"
+          android:icon="@drawable/ic_folder_black_24dp"
+          android:title="D-Locker" />
+      <item
+          android:id="@+id/nav_upload"
+          android:icon="@drawable/ic_file_upload_black_24dp"
+          android:title="Upload" />
+      <item
+          android:id="@+id/nav_download"
+          android:icon="@drawable/ic_file_download_black_24dp"
+          android:title="Download" />
+   </group>
+   <item
+       android:layout_height="wrap_content"
+       android:title="Communicate">
+      <menu>
+         <item
 
-              android:id="@+id/nav_share"
-              android:icon="@drawable/ic_share_black_24dp"
-              android:title="Share" />
-          <item
-              android:id="@+id/nav_invite"
-              android:icon="@drawable/ic_insert_invitation_black_24dp"
-              android:title="Invite" />
-          <item
-        android:id="@+id/nav_feedback"
-        android:icon="@drawable/ic_feedback_black_24dp"
-        android:title="Send Feedback" />
+             android:id="@+id/nav_share"
+             android:icon="@drawable/ic_share_black_24dp"
+             android:title="Share" />
+         <item
+             android:id="@+id/nav_invite"
+             android:icon="@drawable/ic_insert_invitation_black_24dp"
+             android:title="Invite" />
+         <item
+             android:id="@+id/nav_feedback"
+             android:icon="@drawable/ic_feedback_black_24dp"
+             android:title="Send Feedback" />
 
 
-       </menu>
-    </item>
+      </menu>
+   </item>
+   <group android:checkableBehavior="single">
+      <item
+          android:id="@+id/nav_logout"
+          android:icon="@android:drawable/ic_lock_power_off"
+          android:title="Logout" />
+   </group>
 </menu>

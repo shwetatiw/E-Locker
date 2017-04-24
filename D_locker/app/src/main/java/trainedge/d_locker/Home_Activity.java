@@ -3,6 +3,7 @@ package trainedge.d_locker;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -28,9 +29,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class Home_Activity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.OnConnectionFailedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.OnConnectionFailedListener,View.OnClickListener {
     private static final String TAG = "invite";
     private static final int REQUEST_INVITE = 252;
+    static final int REQUEST_IMAGE_CAPTURE = 1;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private GoogleApiClient mGoogleApiClient;
@@ -71,6 +73,8 @@ public class Home_Activity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        FloatingActionButton camera = (FloatingActionButton) findViewById(R.id.fbcam);
+        camera.setOnClickListener(this);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -100,12 +104,6 @@ public class Home_Activity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         switch (item.getItemId()) {
-            case R.id.action_doc:
-                break;
-            case R.id.action_camera:
-                break;
-            case R.id.action_add_file:
-                break;
             case R.id.action_setting:
                 Intent setting = new Intent(Home_Activity.this, SettingsActivity.class);
                 startActivity(setting);
@@ -211,5 +209,12 @@ public class Home_Activity extends AppCompatActivity
         if (mGoogleApiClient != null && mGoogleApiClient.isConnected()) {
             mGoogleApiClient.disconnect();
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent cam = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(cam, REQUEST_IMAGE_CAPTURE);
+
     }
 }

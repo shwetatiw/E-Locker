@@ -5,12 +5,6 @@
         android:id="@+id/action_doc"
         android:title="Search" />
     <item
-        android:id="@+id/action_camera"
-        android:title="Camera" />
-    <item
-        android:id="@+id/action_add_file"
-        android:title="Add New" />
-    <item
         android:id="@+id/action_setting"
         android:title="Setting" />
     <item
