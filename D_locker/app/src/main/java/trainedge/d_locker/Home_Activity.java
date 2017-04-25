@@ -3,7 +3,6 @@ package trainedge.d_locker;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -29,13 +28,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class Home_Activity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.OnConnectionFailedListener,View.OnClickListener {
+        implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.OnConnectionFailedListener, View.OnClickListener {
     private static final String TAG = "invite";
     private static final int REQUEST_INVITE = 252;
-    static final int REQUEST_IMAGE_CAPTURE = 1;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private GoogleApiClient mGoogleApiClient;
+    private FloatingActionButton fabcam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +42,7 @@ public class Home_Activity extends AppCompatActivity
         setContentView(R.layout.activity_home_);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        fabcam = (FloatingActionButton) findViewById(R.id.fbcam);
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
 
@@ -73,9 +73,8 @@ public class Home_Activity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        FloatingActionButton camera = (FloatingActionButton) findViewById(R.id.fbcam);
-        camera.setOnClickListener(this);
         navigationView.setNavigationItemSelectedListener(this);
+        fabcam.setOnClickListener(this);
     }
 
     @Override
@@ -105,8 +104,6 @@ public class Home_Activity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         switch (item.getItemId()) {
             case R.id.action_setting:
-                Intent setting = new Intent(Home_Activity.this, SettingsActivity.class);
-                startActivity(setting);
                 break;
             case R.id.action_about:
                 Intent about = new Intent(Home_Activity.this, AboutActivity.class);
@@ -213,8 +210,7 @@ public class Home_Activity extends AppCompatActivity
 
     @Override
     public void onClick(View v) {
-        Intent cam = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(cam, REQUEST_IMAGE_CAPTURE);
-
+        Intent fabcam= new Intent(this,ScanningActivity.class);
+        startActivity(fabcam);
     }
 }

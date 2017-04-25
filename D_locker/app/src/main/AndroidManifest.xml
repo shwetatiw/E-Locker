@@ -2,7 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="trainedge.d_locker">
 
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -28,14 +32,6 @@
             android:label="@string/title_activity_home_"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings"
-            android:parentActivityName=".Home_Activity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="trainedge.d_locker.Home_Activity" />
-        </activity>
-        <activity
             android:name=".SplashActivity"
             android:label="Dlocker"
             android:theme="@style/AppTheme.NoActionBar">
@@ -54,6 +50,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="trainedge.d_locker.Home_Activity" />
         </activity>
+        <activity android:name=".ScanningActivity" />
         <activity
             android:name=".AboutActivity"
             android:label="@string/title_activity_about"
