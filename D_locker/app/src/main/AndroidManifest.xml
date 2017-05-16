@@ -60,6 +60,20 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="trainedge.d_locker.Home_Activity" />
         </activity>
+        <activity android:name=".user_document_detail" />
+        <activity
+            android:name=".Profile_information_activity"
+            android:label="@string/title_activity_profile_information_activity"
+            android:parentActivityName=".Home_Activity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="trainedge.d_locker.Home_Activity" />
+        </activity>
+        <activity
+            android:name=".CalenderActivity"
+            android:label="Reminder Settings"/>
+        <activity android:name=".Notificationsetting"/>
     </application>
 
 </manifest>

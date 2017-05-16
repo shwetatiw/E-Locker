@@ -58,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="150dp"
                 android:layout_marginTop="80dp"
+                android:drawableLeft="@drawable/ic_create_black_24dp"
                 android:fontFamily="sans-serif-condensed"
                 android:text="B.tech(IT),M.sc(IT)"
                 android:textAlignment="center"
@@ -72,9 +73,10 @@
                 android:layout_marginLeft="150dp"
                 android:layout_marginTop="115dp"
 
+                android:drawableLeft="@drawable/ic_email_black_24dp"
                 android:fontFamily="sans-serif-condensed"
-                android:text="shwetatiwari9595@gmail.com"
 
+                android:text="shwetatiwari9595@gmail.com"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="12sp"
                 android:textStyle="bold" />
@@ -86,9 +88,10 @@
                 android:layout_marginLeft="150dp"
                 android:layout_marginTop="100dp"
 
+                android:drawableLeft="@drawable/ic_email_black_24dp"
                 android:fontFamily="sans-serif-condensed"
-                android:text="shwetatiwari20aug@gmail.com"
 
+                android:text="shwetatiwari20aug@gmail.com"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="12sp"
                 android:textStyle="bold" />
@@ -103,7 +106,7 @@
                 android:fontFamily="sans-serif-condensed"
                 android:text="SHWETA TIWARI"
 
-                android:textColor="#fff"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 

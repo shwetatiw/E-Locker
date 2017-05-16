@@ -2,12 +2,13 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
    <group android:checkableBehavior="single">
+
       <item
-          android:id="@+id/nav_file"
-          android:icon="@drawable/ic_folder_black_24dp"
-          android:title="D-Locker" />
+          android:id="@+id/nav_profile"
+          android:icon="@drawable/ic_person_black_24dp"
+          android:title="Profile" />
       <item
-          android:id="@+id/nav_upload"
+          android:id="@+id/nav_scan"
           android:icon="@drawable/ic_file_upload_black_24dp"
           android:title="Upload" />
       <item

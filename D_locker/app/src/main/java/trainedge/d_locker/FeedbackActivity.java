@@ -1,6 +1,7 @@
 package trainedge.d_locker;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -9,6 +10,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class FeedbackActivity extends AppCompatActivity implements View.OnClickListener, TextWatcher {
@@ -70,17 +72,16 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
             ermail.setError("Please enter a valid email address.");
             return;
         }
-        Intent emailint = new Intent(Intent.ACTION_SEND);
-        emailint.setType("text/html");
-        emailint.putExtra(Intent.EXTRA_EMAIL, new String[]{"shwetatiwari20aug@gamil.com"});
-        emailint.putExtra(Intent.EXTRA_EMAIL, new String[]{"shwetatiwari9595@gamil.com"});
-        emailint.putExtra(Intent.EXTRA_SUBJECT, "Feedback");
-        emailint.putExtra(Intent.EXTRA_TEXT, "Hi,\n \t You have got a feedback. And user's thought about the app are - \"" +
-                "" + erfeed.getText().toString() + "\". To write him back please use the email \"" +
-                "" + ermail.getText().toString() + "\". \n\tHave a nice day. \n\tThank You.");
-        startActivity(Intent.createChooser(emailint, "Send feedback using..."));
-        erfeed.setText("");
-        ermail.setText("");
+            Intent intent = new Intent(Intent.ACTION_SENDTO);
+            intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+            intent.putExtra(Intent.EXTRA_EMAIL, "shwetatiwari20aug.com");
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback info");
+        intent.putExtra(Intent.EXTRA_TEXT, str1);
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent);
+            }else{
+                Toast.makeText(this,"NO APP FOUND",Toast.LENGTH_SHORT).show();
+        }
     }
 
 }

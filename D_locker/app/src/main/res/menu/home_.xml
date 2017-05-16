@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--com.mancj.materialsearchbar.MaterialSearchBar
+        app:mt_speechMode="true"
+        app:mt_hint="Custom hint"
+        app:mt_maxSuggestionsCount="10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchBar" />-->
     <item
-        android:id="@+id/action_doc"
-        android:icon="@drawable/ic_search_black_24dp"
-        android:title="Search"
-        app:showAsAction="always" />
+        android:id="@+id/action_about"
+        android:title="About" />
     <item
-        android:id="@+id/action_setting"
-        android:title="Setting" />
+        android:id="@+id/action_setreminder"
+        android:title="Set Reminder" />
     <item
         android:id="@+id/action_exit"
         android:icon="@drawable/ic_exit_to_app_black_24dp"
         android:title="Exit"
         app:showAsAction="always" />
-    <item
-        android:id="@+id/action_about"
-        android:title="About" />
 </menu>

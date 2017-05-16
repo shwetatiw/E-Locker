@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="trainedge.d_locker.Home_Activity">
+    tools:context="trainedge.d_locker.Profile_information_activity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -20,12 +20,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_home_" />
-    <!--com.mancj.materialsearchbar.MaterialSearchBar
-        android:id="@+id/searchBarHome"
-        app:mt_navIconEnabled="true"
-        app:mt_placeholder="Google Play"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>-->
+    <include layout="@layout/content_profile_information_activity" />
 
 </android.support.design.widget.CoordinatorLayout>
