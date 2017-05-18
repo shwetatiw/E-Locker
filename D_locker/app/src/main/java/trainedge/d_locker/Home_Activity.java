@@ -86,7 +86,7 @@ public class Home_Activity extends AppCompatActivity implements NavigationView.O
         logout = (MenuItem) findViewById(nav_logout);
         fabscandoc = (FloatingActionButton) findViewById(R.id.fabScandoc);
         headerView = navigationView.getHeaderView(0);//header view object for getting image on nav_bar
-//         updateui(headerView);
+         //  updateui(headerView);
         fabscandoc.setOnClickListener(this);
         mAuth = FirebaseAuth.getInstance();
         mAuthListener =new FirebaseAuth.AuthStateListener(){
@@ -209,10 +209,9 @@ public class Home_Activity extends AppCompatActivity implements NavigationView.O
             return  true;
 
         }
-        if (id == R.id.action_exit) {
-            finish();
 
-        }
+
+
 
         return super.onOptionsItemSelected(item);
     }
@@ -230,9 +229,7 @@ public class Home_Activity extends AppCompatActivity implements NavigationView.O
                 break;
 
 
-            case R.id.nav_download:
-                // TODO users download documents
-                break;
+
 
           /*  case R.id.nav_profile:
                 //// TODO: get users profile info.
@@ -336,7 +333,7 @@ public class Home_Activity extends AppCompatActivity implements NavigationView.O
        String username = user.getDisplayName();
         String email1 = user.getEmail();
         Uri photoUrl = user.getPhotoUrl();
-       name.setText(username);
+        name.setText(username);
         email.setText(email1);
         Picasso.with(this)
                 .load(photoUrl)

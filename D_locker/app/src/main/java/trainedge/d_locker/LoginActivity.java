@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -41,7 +42,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
     public static final int RC_SIGN_IN = 1803;
     private static final String TAG = "LoginActivity";
-    private ImageView ivGoogleSingin;
+    private Button ivGoogleSingin;
     private GoogleApiClient mGoogleApiClient;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -53,7 +54,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance();
-        ivGoogleSingin = (ImageView) findViewById(R.id.ivGoogleSingin);
+        ivGoogleSingin = (Button) findViewById(R.id.ivGoogleSingin);
         // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
